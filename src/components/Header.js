@@ -1,9 +1,17 @@
-import React from 'react'
+import '../styles/Header.css'
+import Image from '../images/shoes.jpg'
 
-function Header() {
+export default function Header() {
   return (
-    <div>Header</div>
+          <>
+              <div className="header-image">
+                <img src={Image} alt="header" />
+              </div>
+              <div className="header-info">
+                <h1 className="header-title">SPRING SALE</h1>
+                <p className="header-desc">DON'T COMPROMISE ON STYLE! GET 30% OFF FOR NEW ARRIVALS</p>
+                <div className="header-btn">SHOP NOW</div>
+             </div>
+          </>     
   )
 }
-
-export default Header
