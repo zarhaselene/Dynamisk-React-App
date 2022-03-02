@@ -1,14 +1,16 @@
-import './App.css';
-import React from 'react';
-import Footer from './components/Footer';
-
+import React from "react";
+import Topbanner from './components/Topbanner';
+import Footer from "./components/Footer";
 
 function App() {
-  return (
-    <div className="App">
-<Footer />
-    </div>
-  );
+	return (
+		<div className="App">
+      <>
+        <Topbanner />
+        <Footer />
+      </>
+		</div>
+	);
 }
 
 export default App;
