@@ -1,6 +1,7 @@
 import React from 'react'
 import CartIcon from '../images/cart-shopping.svg'
 import SearchIcon from '../images/search.svg'
+import { Link } from 'react-router-dom'
 import '../styles/Navbar.css'
 
 export default function Navbar() {
@@ -25,7 +26,7 @@ export default function Navbar() {
 
                 <div className="navbar-cart">
                   <span>0</span>
-                  <img src={CartIcon} alt="" width="20px"/>
+                  <Link to="/cart"><img src={CartIcon} alt="" width="20px"/></Link>
                 </div>
             </div>
         </div>
