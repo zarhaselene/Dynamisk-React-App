@@ -22,7 +22,7 @@ export default function Navbar() {
             </div>
             <div className="navbar-right">
               <div className="navbar-menuItem">Home</div>
-              <div className="navbar-menuItem">Products</div>
+              <div className="navbar-menuItem"><Link to="/products/">Products</Link></div>
 
                 <div className="navbar-cart">
                   <span>0</span>
