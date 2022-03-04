@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Products from './pages/Products';
 import Cart from "./pages/CartPage";
+import Product from "./pages/Product";
 
 function App() {
 	return (
@@ -22,7 +23,9 @@ function App() {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/products/:id" element={<Product />} />
             <Route path="/cart" element={<Cart />} />
+
         </Routes>
         <Footer />
       </BrowserRouter>
