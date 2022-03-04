@@ -1,9 +1,90 @@
-import React from 'react'
+import React, { useReducer, useContext, createContext } from "react";
+import '../styles/Cart.css'
 
-function Cart() {
-  return (
-    <div>Cart</div>
+const CartStateContext = createContext();
+const CartDispatchContext = createContext();
+
+const reducer = (state, action) => {
+  switch(action.type){
+    case "ADD":
+    return [...state, action.item]
+    case "REMOVE":
+      const newArr = [...state];
+      newArr.splice(action.index, 1)
+      return newArr;
+    default: 
+    throw new Error(`unknown action ${action.type}`)
+  }
+}
+
+export const CartProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, [])
+  
+  return(
+    <CartDispatchContext.Provider value={dispatch}>
+<CartStateContext.Provider value={state}>
+  { children }
+</CartStateContext.Provider>
+    </CartDispatchContext.Provider>
   )
 }
 
-export default Cart
+export const useCart = () => useContext(CartStateContext);
+export const useDispatch = () => useContext(CartDispatchContext);
+
+const CartItem = ({ product, index, handleRemove, props }) => {
+  return (
+    <>
+      <div className="cart-product">
+      <button className="remove-product" onClick={() => handleRemove(index)}>x</button>
+        <div className="cart-product-detail">
+          <img className="cart-product-image" src={product.url} alt="" />
+          <div className="cart-product-details">
+            <span className="cart-product-title">
+              <b>Product:</b>{product.title}
+            </span>
+            <span className="cart-product-id"><b>ID:</b>{product.id}</span>
+          </div>
+          <div className="cart-product-price">${product.price}</div>
+        </div>  
+      </div>
+      <hr className="cart-hr"/>
+    </>
+  );
+};
+
+export default function Store() {
+  const items = useCart();
+  const dispatch = useDispatch();
+  const totalPrice = items.reduce((total, b) => total + b.price, 0);
+
+  const handleRemove = (index) => {
+    dispatch({ type: "REMOVE", index });
+  };
+
+  if (items.length === 0) {
+    return (
+      <p className="cart-empty">Cart is empty</p>
+    );
+  }
+  return (
+    <>
+        <p className="total">
+        Total price:{" "}
+        ${totalPrice}
+      </p>
+      {items.map((item, index) => (
+        <CartItem
+          handleRemove={handleRemove}
+          key={index}
+          product={item}
+          index={index}
+        />
+      ))}
+    </>
+    
+  );
+}
+
+
+

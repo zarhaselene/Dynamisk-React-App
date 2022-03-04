@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "../components/Cart";
 import "../styles/Products.css";
 
 function Products(product) {
+	const dispatch = useDispatch();
 
 	const addToCart = (item) => {
 		console.log(item);
+		dispatch({ type: "ADD", item });
 	};
 
 	const [products, setProducts] = useState([]);
