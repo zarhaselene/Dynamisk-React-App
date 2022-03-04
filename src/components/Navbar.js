@@ -17,7 +17,7 @@ export default function Navbar() {
             </div>
             <div className="navbar-center">
               <div className="navbar-logo">
-                <h1>MEZA</h1>
+              <h1><Link to="/">MEZA</Link></h1>
               </div>
             </div>
             <div className="navbar-right">
