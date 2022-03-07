@@ -1,9 +1,9 @@
 // import React from 'react'
 
-// function ConformationPage() {
+// function ConfirmationPage() {
 // //   return (
 // //     // <img src={} alt='' />
 // //   )
 // }
 
-// export default ConformationPage
+// export default ConfirmationPage

@@ -40,7 +40,9 @@ export default function Store() {
           ${totalPrice}
         </p>
         <div>
-          <Link to="/products"><button>Continue shopping</button></Link>
+        <button className="checkout-continue">
+        <Link to="/products">Continue shopping</Link>
+        </button>        
         </div>
       </main>
     );
@@ -63,7 +65,7 @@ export default function Store() {
       <br />
       <div>
         <button className="buy-btn">
-          <Link to="/conformationpage">Buy</Link>
+          <Link to="/confirmationpage">Buy</Link>
           </button>
           
         <button className="checkout-continue">

@@ -2,6 +2,7 @@ import React, { useReducer, useContext, createContext, useEffect } from "react";
 import '../styles/Cart.css'
 
 const CartStateContext = createContext();
+
 const CartDispatchContext = createContext();
 
 const cartReducer = (state, action) => {

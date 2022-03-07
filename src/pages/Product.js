@@ -29,7 +29,7 @@ function Product({ Products }) {
 
 	useEffect(() => {
 		fetchData();
-	});
+	}, []);
 
 	return (
 		<div className="productpage-container" key={product.id}>
