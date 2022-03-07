@@ -43,7 +43,6 @@ const CartItem = ({ product, index, handleRemove, props }) => {
   return (
     <>
       <div className="cart-product">
-      <button className="remove-product" onClick={() => handleRemove(index)}>x</button>
         <div className="cart-product-detail">
           <img className="cart-product-image" src={product.url} alt="" />
           <div className="cart-product-details">
@@ -54,6 +53,7 @@ const CartItem = ({ product, index, handleRemove, props }) => {
           </div>
           <div className="cart-product-price">${product.price}</div>
         </div>  
+        <button className="remove-product" onClick={() => handleRemove(index)}>x</button>
       </div>
       <hr className="cart-hr"/>
 
