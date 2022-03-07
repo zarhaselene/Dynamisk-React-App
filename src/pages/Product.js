@@ -30,7 +30,8 @@ function Product({ Product }) {
 
 	useEffect(() => {
 		fetchData();
-	}, []);
+		// eslint-disable-next-line
+	}, []); 
 
 	return (
 		<div className="product-page-container" key={product.id}>
