@@ -3,7 +3,7 @@ import { useCart, useDispatch } from "../components/Cart";
 import { Link } from 'react-router-dom'
 import '../styles/Checkout.css'
 
-const CartItem = ({ product, index, removeBtnHandle, props }) => {
+const CartItem = ({ product, index, removeBtnHandle }) => {
   return (
     <>
       <table>
@@ -11,7 +11,7 @@ const CartItem = ({ product, index, removeBtnHandle, props }) => {
           <tr>
             <td><img src={product.url} className="" alt="" width='100' height='100' /></td>
             <td>{product.title}</td>
-            <td>{product.price} Kr</td>
+            <td>${product.price}</td>
             <td> <button onClick={() => removeBtnHandle(index)}>x</button></td>
           </tr>
         </tbody>
@@ -29,6 +29,10 @@ export default function Store() {
   const removeBtnHandle = (index) => {
     dispatch({ type: "REMOVE", index });
   };
+
+  const buy = (index) => {
+    dispatch({ type: "CLEARALL", index });
+  }
 
   if (items.length === 0) {
     return (
@@ -64,9 +68,8 @@ export default function Store() {
       </p>
       <br />
       <div>
-        <button className="buy-btn">
-          <Link to="/confirmationpage">Buy</Link>
-          </button>
+        <Link to="/confirmationpage"><button className="buy-btn" onClick={buy}>Buy</button></Link>
+
           
         <button className="checkout-continue">
         <Link to="/products">Continue shopping</Link>

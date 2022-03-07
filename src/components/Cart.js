@@ -6,15 +6,20 @@ const CartStateContext = createContext();
 const CartDispatchContext = createContext();
 
 const cartReducer = (state, action) => {
-  switch(action.type){
+  switch (action.type) {
     case "ADD":
-    return [...state, action.item]
+      return [...state, action.item]
     case "REMOVE":
       const newArr = [...state];
       newArr.splice(action.index, 1)
       return newArr;
-    default: 
-    throw new Error(`unknown action ${action.type}`)
+    case "CLEARALL":
+      const clearAll = [...state];
+      clearAll.splice(action.index);
+      return clearAll;
+
+    default:
+      throw new Error(`unknown action ${action.type}`)
   }
 }
 
@@ -26,12 +31,12 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem('state', JSON.stringify(state))
-  }, [state]) 
-  return(
+  }, [state])
+  return (
     <CartDispatchContext.Provider value={dispatch}>
-<CartStateContext.Provider value={state}>
-  { children }
-</CartStateContext.Provider>
+      <CartStateContext.Provider value={state}>
+        {children}
+      </CartStateContext.Provider>
     </CartDispatchContext.Provider>
   )
 }
@@ -39,7 +44,7 @@ export const CartProvider = ({ children }) => {
 export const useCart = () => useContext(CartStateContext);
 export const useDispatch = () => useContext(CartDispatchContext);
 
-const CartItem = ({ product, index, handleRemove, props }) => {
+const CartItem = ({ product, index, handleRemove }) => {
   return (
     <>
       <div className="cart-product">
@@ -52,10 +57,10 @@ const CartItem = ({ product, index, handleRemove, props }) => {
             <span className="cart-product-id"><b>ID:</b>{product.id}</span>
           </div>
           <div className="cart-product-price">${product.price}</div>
-        </div>  
+        </div>
         <button className="remove-product" onClick={() => handleRemove(index)}>x</button>
       </div>
-      <hr className="cart-hr"/>
+      <hr className="cart-hr" />
 
     </>
   );
@@ -77,7 +82,7 @@ export default function Store() {
   }
   return (
     <>
-        <p className="total">
+      <p className="total">
         Total price:{" "}
         ${totalPrice}
       </p>
@@ -90,7 +95,7 @@ export default function Store() {
         />
       ))}
     </>
-    
+
   );
 }
 

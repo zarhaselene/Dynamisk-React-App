@@ -1,9 +1,13 @@
-// import React from 'react'
+import React from 'react'
+import Thankyou from '../images/ThankYou.png'
+import '../styles/ConfirmationPage.css'
 
-// function ConfirmationPage() {
-// //   return (
-// //     // <img src={} alt='' />
-// //   )
-// }
+function ConfirmationPage() {
+  return (
+      <div className='imagestyle'>
+    <img src={ Thankyou } alt='' height="10%" width="60%" />
+    </div>
+  )
+}
 
-// export default ConfirmationPage
+export default ConfirmationPage
