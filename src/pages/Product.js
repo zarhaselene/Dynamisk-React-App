@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch } from "../components/Cart";
 import "../styles/Product.css";
 
-function Product({ Products }) {
+function Product({ Product }) {
 	const dispatch = useDispatch();
 
 	const addToCart = (item) => {
@@ -29,7 +29,7 @@ function Product({ Products }) {
 
 	useEffect(() => {
 		fetchData();
-	}, []);
+	});
 
 	return (
 		<div className="productpage-container" key={product.id}>
