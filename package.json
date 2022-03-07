@@ -1,6 +1,7 @@
 {
   "name": "products-client-react-styled",
-  "version": "0.1.0",
+  "version": "6.0.9",
+  "resolution": "react-error-overlay@npm:6.0.9",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
