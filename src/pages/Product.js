@@ -52,7 +52,7 @@ function Product({ Product }) {
 					<div className="product-filter-container">
 						<div className="product-filter">
 							<select className="product-filter-size">
-								<option disabled selected>
+								<option>
 									{" "}
 									Size
 								</option>

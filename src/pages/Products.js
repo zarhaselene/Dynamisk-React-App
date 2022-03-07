@@ -36,7 +36,7 @@ function Products(product) {
 				<div className="filter">
 					<span className="filter-text">Filter products: </span>
 					<select>
-						<option disabled selected>
+						<option>
 							{" "}
 							Color
 						</option>
@@ -47,7 +47,7 @@ function Products(product) {
 						<option>Multi</option>
 					</select>
 					<select>
-						<option disabled selected>
+						<option>
 							{" "}
 							Size
 						</option>
@@ -61,7 +61,7 @@ function Products(product) {
 				<div className="filter">
 					<span className="filter-text">Sort products: </span>
 					<select>
-						<option selected> Recommended</option>
+						<option> Recommended</option>
 						<option>Newest</option>
 						<option>Price (asc)</option>
 						<option>Price (desc)</option>
