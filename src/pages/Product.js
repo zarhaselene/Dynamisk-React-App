@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "../components/Cart";
+import { Link } from "react-router-dom";
 import "../styles/Product.css";
 
 function Product({ Product }) {
@@ -29,11 +30,14 @@ function Product({ Product }) {
 
 	useEffect(() => {
 		fetchData();
-	});
+	}, []);
 
 	return (
-		<div className="productpage-container" key={product.id}>
-			<div className="productpage-wrapper">
+		<div className="product-page-container" key={product.id}>
+					<button className="product-page-back-btn">
+						<Link to="/products">Back </Link>
+					</button>
+			<div className="product-page-wrapper">
 				{/* Image */}
 				<div className="image-container">
 					<img className="product-image" src={product.url} alt="" />
