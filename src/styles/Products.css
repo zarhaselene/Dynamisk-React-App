@@ -1,3 +1,4 @@
+/* Header */
 .page-title {
 	margin: 20px;
 }
@@ -18,4 +19,70 @@
 select {
 	padding: 10px;
 	margin-right: 20px;
+}
+/* Products */
+.products-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 80vw;
+	margin: 0 auto;
+}
+
+a:link {
+	text-decoration: none;
+	color: black;
+}
+a:hover {
+	color: lightblue;
+}
+a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+.products-price {
+	font-weight: 500;
+}
+
+.card {
+	min-width: 200px;
+	min-height: 300px;
+	overflow: hidden;
+	border: solid 1px #eee;
+	padding-bottom: 30px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	margin: 30px;
+}
+
+.card:hover {
+	box-shadow: none;
+}
+
+.card-info {
+	padding: 20px;
+}
+
+.card img {
+	width: 340px;
+	height: 255px;
+	object-fit: cover;
+}
+
+.card-add-btn button {
+	background-color: lightblue;
+	border: 1px solid lightblue;
+	color: white;
+	border: none;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 12px;
+	margin-top: 20px;
+	padding: 8px;
+}
+.card-add-btn button:hover {
+	border: 2px solid lightblue;
+	background-color: white;
+	color: black;
 }
