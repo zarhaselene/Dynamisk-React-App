@@ -129,9 +129,11 @@ export default function Store() {
           <Link to="/products">Continue shopping</Link>
         </button>
 
+        <Link className="a" to="/confirmationpage">
         <button className="checkout-buy" onClick={buy}>
-          <Link to="/confirmationpage">Buy</Link>
+          BUY
         </button>
+        </Link>
       </div>
       <br />
     </>
