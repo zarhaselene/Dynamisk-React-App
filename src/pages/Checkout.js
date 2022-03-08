@@ -99,27 +99,25 @@ export default function Store() {
       <form className="form-position">
         <label className="label-size">
         <hr/>
-          <input type="email" name="email" placeholder="E-mail adres. . ." />
+          <input className="input-single" type="email" name="email" placeholder="E-mail adres. . ." />
 
           <br />
 
-          <input type="text" name="firstname" placeholder="Firstname. . ." />
-          <input type="text" name="lastname" placeholder="Lastname. . ." />
+          <input className="input-double" type="text" name="firstname" placeholder="Firstname. . ." />
+          <input className="input-double" type="text" name="lastname" placeholder="Lastname. . ." />
 
           <br />
 
-          <input type="text" name="adress" placeholder="Adress. . ." />
+          <input className="input-single" type="text" name="adress" placeholder="Adress. . ." />
 
           <br/>
 
-          <input type="number" name="Zip" placeholder="Zip. . ." />
-          <input type="text" name="City" placeholder="City. . ." />
+          <input className="input-double" type="number" name="Zip" placeholder="Zip. . ." />
+          <input className="input-double" type="text" name="City" placeholder="City. . ." />
 
           <br />
 
-          
-
-          <input type="text" name="State" placeholder="State. . ." />
+          <input className="input-single" type="text" name="State" placeholder="State. . ." />
                     
           <hr/>
         </label>

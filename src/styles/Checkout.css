@@ -78,3 +78,12 @@
   justify-content: center;
 }
 
+.input-double {
+  font-size: 20px;
+  padding: 1rem;
+}
+
+.input-single {
+  font-size: 20px;
+  padding: 1rem;
+}
