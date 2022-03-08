@@ -1,5 +1,5 @@
 import React, { useReducer, useContext, createContext, useEffect } from "react";
-import Pin from "../images/location.svg";
+import Trash from "../images/trash.svg";
 import "../styles/Cart.css";
 
 const CartStateContext = createContext();
@@ -66,7 +66,7 @@ const CartItem = ({ product, index, handleRemove }) => {
 				</div>
         <button className="remove-product"
         onClick={() => handleRemove(index)}>
-          X
+          <img src={Trash}  alt="" />
 				</button>
 			</div>
 		</>
