@@ -4,6 +4,8 @@ import { useCart, useDispatch } from "../components/Cart";
 // Importerar useDispatch för att få tillgång till dispatch
 import { Link } from 'react-router-dom'
 import Trash from '../images/trash.svg'
+import Cart from '../images/Cart.png'
+import FastDelivery from '../images/FastDelivery.png'
 import '../styles/Checkout.css'
 
 const CartItem = ({ product, index, removeBtnHandle }) => {
@@ -108,7 +110,7 @@ export default function Store() {
       
       <br />
       <form className="form-position">
-     
+      <img src={FastDelivery} alt="" height="20%" width="20%" />
         <label className="label-size">
         <p className="checkout-label">Customer Info</p>
         <hr/>
@@ -137,7 +139,7 @@ export default function Store() {
       </form>
 
       <form className="form-position">
-     
+      <img src={Cart} alt="" height="20%" width="20%" />
      <label className="label-size">
      <p className="checkout-label">Add cart</p>
      <hr/>
