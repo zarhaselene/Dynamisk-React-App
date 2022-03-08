@@ -69,9 +69,9 @@ export default function Store() {
         <p className="cart-empty">Cart is empty</p>;
         <div className="btn-checkout-empty">
           <div>
-          <button className="checkout-continue">
-            <Link to="/products">Continue shopping</Link>
-          </button>
+            <button className="checkout-continue">
+              <Link to="/products">Continue shopping</Link>
+            </button>
           </div>
         </div>
       </main>
@@ -96,13 +96,43 @@ export default function Store() {
         ${totalPrice}
       </p>
       <br />
+      <form className="form-position">
+        <label className="label-size">
+        <hr/>
+          <input type="email" name="email" placeholder="E-mail adres. . ." />
+
+          <br />
+
+          <input type="text" name="firstname" placeholder="Firstname. . ." />
+          <input type="text" name="lastname" placeholder="Lastname. . ." />
+
+          <br />
+
+          <input type="text" name="adress" placeholder="Adress. . ." />
+
+          <br/>
+
+          <input type="number" name="Zip" placeholder="Zip. . ." />
+          <input type="text" name="City" placeholder="City. . ." />
+
+          <br />
+
+          
+
+          <input type="text" name="State" placeholder="State. . ." />
+                    
+          <hr/>
+        </label>
+      </form>
+    
+      <br />
       <div className="btn-final-checkout">
-      <button className="checkout-continue">
+        <button className="checkout-continue">
           <Link to="/products">Continue shopping</Link>
         </button>
 
-      <button className="checkout-buy" onClick={buy}>
-        <Link to="/confirmationpage">Buy</Link>
+        <button className="checkout-buy" onClick={buy}>
+          <Link to="/confirmationpage">Buy</Link>
         </button>
       </div>
       <br />
