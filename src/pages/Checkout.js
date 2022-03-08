@@ -1,5 +1,7 @@
 import React from "react";
 import { useCart, useDispatch } from "../components/Cart";
+// Importerar useCart för att få tillgång till alla products
+// Importerar useDispatch för att få tillgång till dispatch
 import { Link } from 'react-router-dom'
 import Trash from '../images/trash.svg'
 import '../styles/Checkout.css'
@@ -43,23 +45,30 @@ const CartItem = ({ product, index, removeBtnHandle }) => {
 };
 
 
-
-
-
-
 export default function Store() {
   const items = useCart();
+    // Hämtar alla items med funktionen useCart()
+
   const dispatch = useDispatch();
+      // Hämtar dispatch med funktionen useDispatch()
+
   const totalPrice = items.reduce((total, b) => total + b.price, 0);
+// Räknar ut totala priset av produkter som vi har inne i kortet
 
   const removeBtnHandle = (index) => {
+        // Skapar en ta bort knapp funktion 
     dispatch({ type: "REMOVE", index });
+      /*  lägger till funktionen dispatch och lägger till ett object i den och passar från 
+     cart components vad den ska göra om man trycker på deletebtn
+ */
   };
 
   const buy = (index) => {
     dispatch({ type: "CLEARALL", index });
   }
+  // Buy knappen raderar alla producter när du trycker på BUY bara för de ska se bra ut :)
 
+    // Om kundvagnen är tom visa
   if (items.length === 0) {
     return (
       <main>

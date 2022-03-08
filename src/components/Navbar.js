@@ -1,5 +1,7 @@
 import React from 'react'
 import CartIcon from '../images/cart-shopping.svg'
+// importerar funtionen UseCart så det går och använda funktionen i Navbaren
+
 import SearchIcon from '../images/search.svg'
 import { Link } from 'react-router-dom'
 import { useCart } from './Cart' 
@@ -7,6 +9,8 @@ import '../styles/Navbar.css'
 
 export default function Navbar() {
     const items = useCart();
+    // kallar på funktionen useCart() och döper den till items
+
   return (
     <nav>
           <div className="navbar-wrapper">
@@ -28,6 +32,8 @@ export default function Navbar() {
 
                 <div className="navbar-cart">
                   <span><Link to="/cart">{items.length}</Link></span>
+                  {/* // här körs item.length där du ser hur många producter du lägger i varukorgen */}
+                  
                   <Link to="/cart"><img src={CartIcon} alt="" width="20px"/></Link>
                 </div>
             </div>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+// hämtar useParams från react-router-dom
+
 import { useDispatch } from "../components/Cart";
 import { Link } from "react-router-dom";
 import "../styles/Product.css";
@@ -13,11 +15,14 @@ function Product({ Product }) {
 	};
 	const [product, setProduct] = useState({});
 	const params = useParams();
+	// kopplar ihop useParams() functionen till params
+
 
 	const fetchData = async () => {
 		try {
 			const response = await fetch(
 				"https://codexplained.se/shoes.php?id=" + params.id
+				// response hämtar api + api id
 			);
 			const data = await response.json();
 			console.log(data);
@@ -31,13 +36,13 @@ function Product({ Product }) {
 	useEffect(() => {
 		fetchData();
 		// eslint-disable-next-line
-	}, []); 
+	}, []);
 
 	return (
 		<div className="product-page-container" key={product.id}>
-					<button className="product-page-back-btn">
-						<Link to="/products">Back </Link>
-					</button>
+			<button className="product-page-back-btn">
+				<Link to="/products">Back </Link>
+			</button>
 			<div className="product-page-wrapper">
 				{/* Image */}
 				<div className="image-container">
