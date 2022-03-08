@@ -123,7 +123,7 @@ export default function Store() {
 
           <br />
 
-          <input className="input-single" type="text" name="adress" placeholder="Adress. . ." />
+          <input className="input-single" type="text" name="address" placeholder="Address. . ." />
 
           <br/>
 
