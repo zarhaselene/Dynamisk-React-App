@@ -95,9 +95,13 @@ export default function Store() {
         Total Price:{" "}
         ${totalPrice}
       </p>
+      <br/>
+      
       <br />
       <form className="form-position">
+     
         <label className="label-size">
+        <p className="checkout-label">Customer Info</p>
         <hr/>
           <input className="input-single" type="email" name="email" placeholder="E-mail adres. . ." />
 
@@ -122,7 +126,32 @@ export default function Store() {
           <hr/>
         </label>
       </form>
-    
+
+      <form className="form-position">
+     
+     <label className="label-size">
+     <p className="checkout-label">Add cart</p>
+     <hr/>
+
+     <input className="input-single" type="name" name="name" placeholder="Name on card. . ." />
+
+<br/>
+       <input className="input-single" type="number" name="Cartnumber" placeholder="Cardnumber. . ." />
+
+       <br/>
+
+       <input className="input-double" type="number" name="Month" placeholder="Month. . ." />
+       <input className="input-double" type="number" name="Year" placeholder="Year. . ." />
+
+       <br/>
+       <input className="input-single" type="number" name="Cartsecuritynumber" placeholder="Cart security number. . ." />
+
+       <br/>     
+       <hr/>
+     </label>
+   </form>
+      <br />
+      <br />
       <br />
       <div className="btn-final-checkout">
         <button className="checkout-continue">

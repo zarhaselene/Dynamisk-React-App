@@ -88,3 +88,8 @@
   padding: 1rem;
 }
 
+.checkout-label {
+  text-align: start;
+    font-size: 30px;
+    font-weight: 200;
+}
