@@ -26,7 +26,12 @@ export default function CartPage() {
 
 
 				<div className="cart-bottom">
-				<Cart />
+					<div className="cart-bottom-left">
+						<Cart />
+					</div>
+					<div className="cart-bottom-right">
+					<div className="cart-left-container"></div>
+					</div>
 				
 				</div>
 			</div>
