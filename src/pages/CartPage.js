@@ -1,11 +1,9 @@
 import React from "react";
-import Cart, { useCart } from "../components/Cart";
+import Cart from "../components/Cart";
 import { Link } from "react-router-dom";
 import "../styles/Cart.css";
 
 export default function CartPage() {
-	
-	const items = useCart();
 	return (
 		<>
 			<div className="cart-wrapper">
@@ -15,27 +13,18 @@ export default function CartPage() {
 					<button className="cart-top-buttons continue">
 						<Link to="/products">Continue shopping</Link>
 					</button>
-					<div className="cart-top-texts">
-						<span className="cart-top-text">Shopping cart({items.length})</span>
-						<span className="cart-top-text">Your wishlist(0)</span>
-					</div>
+					
 					<button className="cart-top-buttons checkout">
 						<Link to="/checkout">Checkout</Link>
 					</button>
 				</div>
 
-
 				<div className="cart-bottom">
-					<div className="cart-bottom-left">
+					<div className="cart-bottom-products-container">
 						<Cart />
 					</div>
-					<div className="cart-bottom-right">
-					<div className="cart-left-container"></div>
-					</div>
-				
 				</div>
 			</div>
-
 		</>
 	);
 }
