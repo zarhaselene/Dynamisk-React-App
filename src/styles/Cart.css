@@ -104,6 +104,12 @@
     
 }
 
+.total-position {
+    position: absolute;
+    margin-left: 55%;
+}
+
+
 .cart-product-detail{
     display: flex;
     justify-content: center;
