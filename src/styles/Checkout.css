@@ -7,6 +7,10 @@
   padding: 10px 10px;
 }
 
+.checkout-continue:hover {
+  background-color: #EFEFEF;
+}
+
 .checkout-continue a {
   color: black;
   text-decoration: none;
@@ -22,6 +26,9 @@
   padding: 10px 71px;
 }
 
+.checkout-buy:hover {
+  background-color: white;
+}
 .checkout-buy a {
   color: white;
   text-decoration: none;
