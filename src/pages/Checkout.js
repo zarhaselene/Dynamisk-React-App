@@ -1,25 +1,51 @@
 import React from "react";
 import { useCart, useDispatch } from "../components/Cart";
 import { Link } from 'react-router-dom'
+import Trash from '../images/trash.svg'
 import '../styles/Checkout.css'
 
 const CartItem = ({ product, index, removeBtnHandle }) => {
   return (
-    <>
-      <table>
-        <tbody>
+
+    <div className="position">
+      <table className="checkout-product">
+        <tbody className="checkout-product-detail">
           <tr>
-            <td><img src={product.url} className="" alt="" width='100' height='100' /></td>
-            <td>{product.title}</td>
-            <td>${product.price}</td>
-            <td> <button onClick={() => removeBtnHandle(index)}>x</button></td>
+            <td><img className="cart-product-image" src={product.url} alt="" /></td>
+
+            <td className="checkout-product-title">
+              <b>Product: </b>
+              {product.title}
+            </td>
+
+            <td className="checkout-product-id">
+              <b>ID: </b>
+              {product.id}
+            </td>
+
+            <td>
+              <div className="checkout-product-price">${product.price}</div>
+            </td>
+
+            <td>
+              <button className="remove-product" onClick={() => removeBtnHandle(index)}>
+                <img src={Trash} alt="" />
+              </button>
+            </td>
+
           </tr>
         </tbody>
       </table>
 
-    </>
+    </div>
+
   );
 };
+
+
+
+
+
 
 export default function Store() {
   const items = useCart();
@@ -37,22 +63,25 @@ export default function Store() {
   if (items.length === 0) {
     return (
       <main>
-        <h1>Checkout</h1>
-        <p>Cart is empty</p>
-        <p>
-          Total Price:{" "}
-          ${totalPrice}
-        </p>
         <div>
-        <button className="checkout-continue">
-        <Link to="/products">Continue shopping</Link>
-        </button>        
+          <h1 className="checkout-page-title">Checkout</h1>
+        </div>
+        <p className="cart-empty">Cart is empty</p>;
+        <div className="btn-checkout-empty">
+          <div>
+          <button className="checkout-continue">
+            <Link to="/products">Continue shopping</Link>
+          </button>
+          </div>
         </div>
       </main>
     );
   }
   return (
     <>
+      <div>
+        <h1 className="checkout-page-title">Checkout</h1>
+      </div>
 
       {items.map((item, index) => (
         <CartItem
@@ -62,17 +91,18 @@ export default function Store() {
           index={index}
         />
       ))}
-      <p>
+      <p className="checkout-total-price">
         Total Price:{" "}
         ${totalPrice}
       </p>
       <br />
-      <div>
-        <Link to="/confirmationpage"><button className="buy-btn" onClick={buy}>Buy</button></Link>
+      <div className="btn-final-checkout">
+      <button className="checkout-continue">
+          <Link to="/products">Continue shopping</Link>
+        </button>
 
-          
-        <button className="checkout-continue">
-        <Link to="/products">Continue shopping</Link>
+      <button className="checkout-buy" onClick={buy}>
+        <Link to="/confirmationpage">Buy</Link>
         </button>
       </div>
       <br />

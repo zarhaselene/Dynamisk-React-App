@@ -12,3 +12,63 @@
   text-decoration: none;
   text-transform: uppercase;
 }
+
+.checkout-buy {
+  padding: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: black;
+  border: 2px solid whitesmoke;
+  padding: 12px 68px;
+}
+
+.checkout-buy a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.checkout-page-title {
+	font-weight: 300;
+	text-align: center;
+}
+
+.position {
+  display: flex;
+  justify-content: center;
+}
+
+.checkout-product {
+  border: 1px solid #ccc;
+  margin-top: 3px;
+  width: 60%;
+}
+
+.checkout-product-price {
+	font-size: 30px;
+	font-weight: 200;
+}
+
+.remove-product {
+	cursor: pointer;
+	background: none;
+	border: none;
+	padding: 10px 10px;
+}
+
+.checkout-total-price {
+  text-align: center;
+  font-size: 30px;
+	font-weight: 200;
+}
+
+.btn-checkout-empty{
+ display: flex;
+ justify-content: center;
+ margin-bottom: 2%;
+}
+
+.btn-final-checkout{
+  display: flex;
+  justify-content: space-around;
+}
