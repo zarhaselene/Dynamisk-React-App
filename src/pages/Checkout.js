@@ -114,7 +114,7 @@ export default function Store() {
         <label className="label-size">
         <p className="checkout-label">Customer Info</p>
         <hr/>
-          <input className="input-single" type="email" name="email" placeholder="E-mail adres. . ." />
+          <input className="input-single" type="email" name="email" placeholder="E-mail address. . ." />
 
           <br />
 
