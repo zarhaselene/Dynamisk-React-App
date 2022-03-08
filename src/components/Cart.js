@@ -87,7 +87,7 @@ export default function Store() {
 	}
 	return (
 		<>
-			<p className="total">Total price: ${totalPrice}</p>
+			<div className="total-position"><p className="total">Total price: ${totalPrice}</p></div>
 			{items.map((item, index) => (
 				<CartItem
 					handleRemove={handleRemove}
